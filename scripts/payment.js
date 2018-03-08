@@ -8,7 +8,7 @@
   var Payment = App.Payment;
   var Cashier = App.Cashier;
   var PAYMENT_SELECTOR = "[data-payment-order=\"form\"]";
-  var WINDOW_SELECTOR = "[data-payment-order=\"message\"]";
+  var WINDOW_SELECTOR = "[data-payment-order=\"greetings\"]";
 
   var dialogBox = new Payment(WINDOW_SELECTOR);
   var paymentFormHandler = new FormHandler(PAYMENT_SELECTOR);
