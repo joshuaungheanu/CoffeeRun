@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>coffeerun</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+
+<body class="container">
+  <header>
+    <h1>CoffeeRun</h1>
+  </header>
+  <section>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form data-coffee-order="form">
+          <!-- Input elements will go here -->
+          <div class="form-group">
+            <label for="coffeeOrder"> Coffee Order</label>
+            <input class="form-control" name="coffee" id="coffeeOrder" autofocus>
+          </div>
+
+          <!-- Adding email input -->
+          <div class="form-group">
+            <label for="emailInput">Email</label>
+            <input class="form-control" type="email" name="emailAddress" id="emailInput" value="" placeholder="dr@who.com">
+          </div>
+
+          <!-- Radio buttons -->
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="short">
+              short</label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="tall" checked>
+              tall</label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="grande">
+              grande</label>
+          </div>
+
+          <!-- Adding a dropdown Menu -->
+          <div class="form-group">
+            <label for="flavorShot">Flavor Shot</label>
+            <select id="flavorShot" class="form-control" name="flavor">
+              <option value="">None</option>
+              <option value="caramel">Caramel</option>
+              <option value="almond">Almond</option>
+              <option value="mocha">Mocha</option>
+            </select>
+          </div>
+
+          <!-- Adding a range slider -->
+          <div class="form-group">
+            <label for="strengthLevel">Caffeine Rating</label>
+            <input name="strenth" id="strengthLevel" type="range" value="30">
+          </div>
+
+          <!-- Adding Submit and Reset Button -->
+          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="reset" class="btn btn-default">Reset</button>
+          <a type="button" class="btn btn-default" href="paymentIndex.html">Validate Payment</a>
+        </form>
+      </div>
+    </div>
+
+      <!-- Pending order -->
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h4>Pending Order:</h4>
+          <div data-coffee-order="checklist">
+          </div>
+        </div>
+      </div>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js" charsel="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+  <script src="scripts/checklist.js" charset="utf-8"></script>
+  <script src="scrips/formhandler.js" charset="utf-8"></script>
+  <script src="scripts/datastore.js" charset="utf-8"></script>
+  <script src="scripts/truck.js" charset="utf-8"></script>
+  <script src="scripts/main.js" charset="utf-8"></script>
+
+</body>
+
+</html>
