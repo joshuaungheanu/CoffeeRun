@@ -1,10 +1,9 @@
 (function(window) {
   "use strict";
-  //code will go here
   var App = window.App || {};
 
   function DataStore() {
-    this.data = {};
+    this.data = {}; //Constructor
   }
 
   DataStore.prototype.add = function(key, val) {
@@ -14,7 +13,6 @@
   DataStore.prototype.get = function(key) {
     return this.data[key];
   };
-
   DataStore.prototype.getAll = function() {
     return this.data;
   };

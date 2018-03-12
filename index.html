@@ -1,10 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">
   <title>coffeerun</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootst
+rap/3.3.6/css/bootstrap.min.css">
+  <style>
+    form :focus:required:invalid {
+      border-color: #a94442;
+    }
+  </style>
 </head>
 
 <body class="container">
@@ -15,53 +21,45 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <form data-coffee-order="form">
-          <!-- Input elements will go here -->
           <div class="form-group">
-            <label for="coffeeOrder"> Coffee Order</label>
-            <input class="form-control" name="coffee" id="coffeeOrder" autofocus>
+            <label for="coffeeOrder">Coffee Order</label>
+            <input class="form-control" name="coffee" id="coffeeOrder" autofocus required pattern="[a-zA-Z\s]+" />
           </div>
-
-          <!-- Adding email input -->
           <div class="form-group">
             <label for="emailInput">Email</label>
-            <input class="form-control" type="email" name="emailAddress" id="emailInput" value="" placeholder="dr@who.com">
-          </div>
-
-          <!-- Radio buttons -->
-          <div class="radio">
-            <label>
-              <input type="radio" name="size" value="short">
-              short</label>
+            <input class="form-control" type="email" name="emailAddress" id="emailInput" value="" placeholder="dr@who.com" required />
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="size" value="tall" checked>
-              tall</label>
+                <input type="radio" name="size" value="short">
+                Short
+              </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="size" value="grande">
-              grande</label>
+                <input type="radio" name="size" value="tall" checked>
+                Tall
+              </label>
           </div>
-
-          <!-- Adding a dropdown Menu -->
+          <div class="radio">
+            <label>
+                <input type="radio" name="size" value="grande">
+                Grande
+              </label>
+          </div>
           <div class="form-group">
             <label for="flavorShot">Flavor Shot</label>
             <select id="flavorShot" class="form-control" name="flavor">
-              <option value="">None</option>
-              <option value="caramel">Caramel</option>
-              <option value="almond">Almond</option>
-              <option value="mocha">Mocha</option>
-            </select>
+                <option value="">None</option>
+                <option value="caramel">Caramel</option>
+                <option value="almond">Almond</option>
+                <option value="mocha">Mocha</option>
+              </select>
           </div>
-
-          <!-- Adding a range slider -->
           <div class="form-group">
             <label for="strengthLevel">Caffeine Rating</label>
-            <input name="strenth" id="strengthLevel" type="range" value="30">
+            <input name="strength" id="strengthLevel" type="range" value="30">
           </div>
-
-          <!-- Adding Submit and Reset Button -->
           <button type="submit" class="btn btn-default">Submit</button>
           <button type="reset" class="btn btn-default">Reset</button>
           <a type="button" class="btn btn-default" href="paymentIndex.html">Validate Payment</a>
@@ -69,23 +67,23 @@
       </div>
     </div>
 
-      <!-- Pending order -->
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <h4>Pending Order:</h4>
-          <div data-coffee-order="checklist">
-          </div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h4>Pending Orders:</h4>
+        <div data-coffee-order="checklist">
         </div>
       </div>
+    </div>
   </section>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js" charsel="utf-8"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+  <script src="webshim/polyfiller.js" charset="utf-8"></script>
+  <script src="scripts/validation.js" charset="utf-8"></script>
   <script src="scripts/checklist.js" charset="utf-8"></script>
-  <script src="scrips/formhandler.js" charset="utf-8"></script>
+  <script src="scripts/formhandler.js" charset="utf-8"></script>
   <script src="scripts/datastore.js" charset="utf-8"></script>
   <script src="scripts/truck.js" charset="utf-8"></script>
   <script src="scripts/main.js" charset="utf-8"></script>
-
 </body>
 
 </html>
